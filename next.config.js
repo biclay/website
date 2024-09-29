@@ -1,8 +1,8 @@
 // next.config.js
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
-let assetPrefix = '/website/'
-let basePath = '/website'
+let assetPrefix = '/website/out/'
+let basePath = '/website/out'
 
 if (isGithubActions) {
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
