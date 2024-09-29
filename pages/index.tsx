@@ -14,7 +14,7 @@ export default function Home() {
       <header className={styles.header}>
         <nav className={styles.nav}>
           <div className={styles.logoBox}>
-            <img src="/logo.svg" alt="Biclay Labs Logo" className={styles.logoImageSmall} />
+            <img src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.svg`} alt="Biclay Labs Logo" className={styles.logoImageSmall} />
           </div>
           <div className={styles.logo}>Biclay</div>
           <ul className={styles.navList}>
@@ -26,7 +26,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.container}>
           <div className={styles.logoBox}>
-            <img src="/logo.svg" alt="Biclay Labs Logo" className={styles.logoImage} />
+            <img src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.svg`} alt="Biclay Labs Logo" className={styles.logoImage} />
           </div>
           <h1 className={styles.title}>Biclay Labs</h1>
           <p className={styles.subtitle}>Consulting for all your AI needs.</p>

@@ -1,8 +1,8 @@
 // next.config.js
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
-let assetPrefix = '/website/'
-let basePath = '/website'
+let assetPrefix = ''
+let basePath = ''
 
 if (isGithubActions) {
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
@@ -17,5 +17,11 @@ module.exports = {
     unoptimized: true,
   },
   output: "export",
+  trailingSlash: true,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_ACTIONS
+      ? `/${process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')}`
+      : '',
+  },
 }
 
