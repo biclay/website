@@ -1,12 +1,14 @@
 {
-  "name": "parlance-labs",
+  "name": "biclay-labs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m 'Deploy static site' && git push official live"
   },
   "dependencies": {
     "react": "^18",

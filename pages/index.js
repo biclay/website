@@ -18,7 +18,7 @@ export default function Home() {
           </div>
           <div className={styles.logo}>Biclay</div>
           <ul className={styles.navList}>
-            <li><a href="/contact" target="_blank" rel="noopener noreferrer">Contact us</a></li>
+            <li><a href="https://forms.gle/fRiDhCa9L1pwqjHn9" target="_blank" rel="noopener noreferrer">Contact us</a></li>
           </ul>
         </nav>
       </header>
