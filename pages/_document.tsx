@@ -4,6 +4,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
+      <Head>
+        <link rel="icon" href={`${process.env.NEXT_PUBLIC_BASE_PATH}/favicon.ico`} />
+      </Head>
       <body className="antialiased">
         <Main />
         <NextScript />
