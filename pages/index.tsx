@@ -29,7 +29,7 @@ export default function Home() {
             <img src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.svg`} alt="Biclay Labs Logo" className={styles.logoImage} />
           </div>
           <h1 className={styles.title}>Biclay Labs</h1>
-          <p className={styles.subtitle}>Consulting for your AI needs.</p>
+          <p className={styles.subtitle}>Consulting for your AI needs</p>
 
           <section className={styles.section}>
             <h2>Why:</h2>
