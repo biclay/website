@@ -8,8 +8,8 @@ if (isGithubActions) {
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
   // assetPrefix = `/${repo}/`
   // basePath = `/${repo}`
-  assetPrefix = ``
-  basePath = ``
+  assetPrefix = ''
+  basePath = ''
 }
 
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
   trailingSlash: true,
   env: {
     NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_ACTIONS
-      ? ``
+      ? ''
       : '',
   },
 }
