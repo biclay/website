@@ -3,7 +3,7 @@ name: Deploy Next.js to GitHub Pages
 on:
   push:
     branches:
-      - live  # This triggers the workflow on pushes to the main branch.
+      - live  # This triggers the workflow on pushes to the live branch.
 
 jobs:
   deploy:
