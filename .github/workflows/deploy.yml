@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build and export the site
-        run: npm run build && touch out/.nojekyll
+        run: npm run build && touch out/.nojekyll && touch out/CNAME && echo "biclay.com" > out/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
