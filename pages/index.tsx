@@ -46,9 +46,9 @@ export default function Home() {
             <h2>What</h2>
             <p>we have done:</p>
             <ol className={styles.list}>
-              <li>Upskill and mentor team members</li>
               <li>Ship LLM products that stays ahead of curve</li>
               <li>Cut costs and optimize latency of AI systems</li>
+              <li>Upskill and mentor team members</li>
               <li>Build tools that accelerates PRD-to-launch time for AI powered products</li>
             </ol>
           </section>
