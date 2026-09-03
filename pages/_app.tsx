@@ -1,5 +1,6 @@
 // pages/_app.tsx
-import '@/styles/globals.css'; // Import the global CSS file
+import '@/styles/fonts.css';
+import '@/styles/site.css';
 import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -7,5 +8,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp;
-
-

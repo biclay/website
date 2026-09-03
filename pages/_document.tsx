@@ -6,6 +6,7 @@ export default function Document() {
       <Head />
       <Head>
         <link rel="icon" href={`${process.env.NEXT_PUBLIC_BASE_PATH}/favicon.ico`} />
+        <script defer src={`${process.env.NEXT_PUBLIC_BASE_PATH}/site.js`} />
       </Head>
       <body className="antialiased">
         <Main />

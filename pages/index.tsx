@@ -1,107 +1,133 @@
-// pages/index.js
+// pages/index.tsx — the company page
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '@/styles/Home.module.css';
+import { Masthead, Footer } from '@/components/Chrome';
+
+const ORG = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Biclay Labs',
+  alternateName: 'Biclay',
+  url: 'https://biclay.com/',
+  logo: 'https://biclay.com/logo.svg',
+  email: 'hello@biclay.com',
+  description: 'Biclay Labs builds AI for work where being wrong has consequences.',
+  brand: { '@type': 'Brand', name: 'CiteOnly', url: 'https://citeonly.com/' },
+  founder: {
+    '@type': 'Person',
+    name: 'Sushant Daga',
+    url: 'https://sushantdaga.com/',
+    sameAs: ['https://github.com/SushantDaga', 'https://www.linkedin.com/in/sushant-daga/'],
+  },
+};
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Biclay Labs</title>
-        <meta name="description" content="Consulting for all your AI needs" />
+        <title>Biclay Labs, the company behind CiteOnly</title>
+        <meta name="description" content="Biclay Labs builds AI for work where being wrong has consequences. Its product is CiteOnly, an AI that cannot make things up. How it started, and who is behind it." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href="https://biclay.com/" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'Biclay Labs',
-            alternateName: 'Biclay',
-            url: 'https://biclay.com/',
-            logo: 'https://biclay.com/logo.svg',
-            brand: { '@type': 'Brand', name: 'CiteOnly', url: 'https://citeonly.com/' },
-            founder: { '@type': 'Person', name: 'Sushant Daga', url: 'https://sushantdaga.com/' },
-          }) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG) }} />
       </Head>
+      <a className="skip" href="#main">Skip to content</a>
+      <Masthead />
 
-      <header className={styles.header}>
-        <nav className={styles.nav}>
-          <div className={styles.logoBox}>
-            <img src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.svg`} alt="Biclay Labs Logo" className={styles.logoImageSmall} />
+      <main id="main">
+        <section className="hero">
+          <div className="row">
+            <div className="main">
+              <p className="hero-mark">Biclay Labs</p>
+              <h1>The company behind CiteOnly.</h1>
+              <p className="deck">Biclay Labs builds AI for work where being wrong has consequences.
+              Its product is CiteOnly, an AI that cannot make things up.</p>
+              <div className="btn-row">
+                <a className="btn" href="https://citeonly.com/" rel="noopener">See CiteOnly</a>
+                <Link className="btn btn-quiet" href="/citeonly/">About the product</Link>
+              </div>
+            </div>
+            <aside className="margin">
+              <div className="note">
+                <b>Where we are</b>
+                Early. CiteOnly is in development and running with a small number of pilot partners.
+              </div>
+            </aside>
           </div>
-          <div className={styles.logo}>Biclay</div>
-          <ul className={styles.navList}>
-            <li><Link href="/citeonly/">CiteOnly</Link></li>
-            <li><a href="https://forms.gle/fRiDhCa9L1pwqjHn9" target="_blank" rel="noopener noreferrer">Contact us</a></li>
-          </ul>
-        </nav>
-      </header>
+        </section>
 
-      <main className={styles.main}>
-        <div className={styles.container}>
-          <div className={styles.logoBox}>
-            <img src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.svg`} alt="Biclay Labs Logo" className={styles.logoImage} />
+        <section className="tight">
+          <div className="row">
+            <div className="main prose">
+              <h2>How it started</h2>
+              <p>Biclay Labs started as an applied machine learning consultancy, and this site first
+              went up in September 2024 to say so: getting language-model products into production,
+              cutting the cost and latency of systems already running, standing up self-hosted
+              models where data could not leave the building.</p>
+              <p>In that work one question kept coming back, from the people whose names went on the
+              output: where did this sentence come from? A checker or a citation matcher added on
+              top made the system more complicated without making the answer any more defensible.</p>
+              <p>CiteOnly is built for that question, and its site went live on 2 September 2026.
+              Consulting is no longer offered. The company builds one product.</p>
+            </div>
+            <aside className="margin">
+              <div className="note">
+                <b>Two dates</b>
+                September 2024, the consulting site. 2 September 2026, citeonly.com.
+              </div>
+            </aside>
           </div>
-          <h1 className={styles.title}>Biclay Labs</h1>
-          <p className={styles.subtitle}>Consulting for all your AI needs</p>
+        </section>
 
-          <section className={styles.section}>
-            <h2>Our product: CiteOnly</h2>
-            <p>
-              An AI that cannot make things up. It answers questions from your own documents,
-              word for word, with the source beside every part.{' '}
-              <a href="https://citeonly.com/" rel="noopener">citeonly.com</a> ·{' '}
-              <Link href="/citeonly/">About CiteOnly</Link>
-            </p>
-          </section>
+        <section className="tight">
+          <div className="row">
+            <div className="main prose">
+              <h2>The product</h2>
+              <p>CiteOnly cannot make things up. Each part of an answer is a passage taken word for
+              word from your own documents, with its source beside it. When the documents do not
+              answer the question, it says so.</p>
+              <p className="follow">
+                <a href="https://citeonly.com/" rel="noopener">The comparison with a general assistant</a> ·{' '}
+                <a href="https://citeonly.com/product/" rel="noopener">What it does</a> ·{' '}
+                <a href="https://citeonly.com/industries/" rel="noopener">Where it applies</a> ·{' '}
+                <a href="https://citeonly.com/research/" rel="noopener">Research</a>
+              </p>
+            </div>
+            <aside className="margin">
+              <div className="note">
+                <b>citeonly.com</b>
+                Everything about the product is on its own site.
+              </div>
+            </aside>
+          </div>
+        </section>
 
-          <section className={styles.section}>
-            <h2>Why:</h2>
-            {/* <p>You are hiring us:</p> */}
-            <ul className={styles.list}>
-              <li>Your LLMs are too expensive or slow</li>
-              <li>You need to self host accurate local LLM</li>
-              <li>Your product requires constant updates to LLM pipeline</li>
-              <li>Your system needs more accuracy</li>
-            </ul>
-          </section>
-
-          <section className={styles.section}>
-            <h2>What</h2>
-            <p>we have done:</p>
-            <ol className={styles.list}>
-              <li>Ship LLM products that stays ahead of curve</li>
-              <li>Cut costs and optimize latency of AI systems</li>
-              <li>Upskill and mentor team members</li>
-              <li>Build tools that accelerates PRD-to-launch time for AI powered products</li>
-            </ol>
-          </section>
-
-          <section className={styles.section}>
-            <h2>How</h2>
-            <p>do we help you:</p>
-            <ul className={styles.list}>
-              <li>Advise you on your ML pipelines and products</li>
-              <li>Build relevant models and pipelines for you</li>
-              <li>Improve your AI systems’ return on investment</li>
-            </ul>
-          </section>
-
-          {/* <section className={styles.section}>
-            <h2>Services</h2>
-            <p>
-              See <a href="/services">this page</a> for more info.
-            </p>
-          </section> */}
-        </div>
+        <section className="cta">
+          <div className="row">
+            <div className="main prose">
+              <h2>The founder</h2>
+              <p><strong>Sushant Daga</strong> founded Biclay Labs and builds CiteOnly.</p>
+              <p className="follow">
+                <a href="https://github.com/SushantDaga" rel="me noopener">GitHub</a> ·{' '}
+                <a href="https://www.linkedin.com/in/sushant-daga/" rel="me noopener">LinkedIn</a> ·{' '}
+                <a href="https://sushantdaga.com" rel="me noopener">sushantdaga.com</a>
+              </p>
+              <div className="btn-row">
+                <a className="btn" href="mailto:hello@biclay.com">hello@biclay.com</a>
+                <a className="btn btn-quiet" href="https://forms.gle/fRiDhCa9L1pwqjHn9" rel="noopener">Contact form</a>
+              </div>
+            </div>
+            <aside className="margin">
+              <div className="note">
+                <b>Contact</b>
+                Email hello@biclay.com and the founder answers.
+              </div>
+            </aside>
+          </div>
+        </section>
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; 2026 Biclay Labs. All rights reserved.</p>
-      </footer>
+      <Footer />
     </>
   );
 }
-
