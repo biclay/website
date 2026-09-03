@@ -40,8 +40,9 @@ export default function CiteOnly() {
               place it came from. When the documents do not answer the question, it says so.
             </p>
             <p>
-              The full description, with an illustration of what an answer looks like, is on{' '}
-              <a href="https://citeonly.com/product/" rel="noopener">citeonly.com</a>.
+              A side-by-side comparison with a general assistant, on the same question and the
+              same two documents, is on{' '}
+              <a href="https://citeonly.com/" rel="noopener">citeonly.com</a>.
             </p>
           </section>
 
