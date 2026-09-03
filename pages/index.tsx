@@ -1,5 +1,6 @@
 // pages/index.js
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from '@/styles/Home.module.css';
 
 export default function Home() {
@@ -9,6 +10,20 @@ export default function Home() {
         <title>Biclay Labs</title>
         <meta name="description" content="Consulting for all your AI needs" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href="https://biclay.com/" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Biclay Labs',
+            alternateName: 'Biclay',
+            url: 'https://biclay.com/',
+            logo: 'https://biclay.com/logo.svg',
+            brand: { '@type': 'Brand', name: 'CiteOnly', url: 'https://citeonly.com/' },
+            founder: { '@type': 'Person', name: 'Sushant Daga', url: 'https://sushantdaga.com/' },
+          }) }}
+        />
       </Head>
 
       <header className={styles.header}>
@@ -18,6 +33,7 @@ export default function Home() {
           </div>
           <div className={styles.logo}>Biclay</div>
           <ul className={styles.navList}>
+            <li><Link href="/citeonly/">CiteOnly</Link></li>
             <li><a href="https://forms.gle/fRiDhCa9L1pwqjHn9" target="_blank" rel="noopener noreferrer">Contact us</a></li>
           </ul>
         </nav>
@@ -30,6 +46,16 @@ export default function Home() {
           </div>
           <h1 className={styles.title}>Biclay Labs</h1>
           <p className={styles.subtitle}>Consulting for all your AI needs</p>
+
+          <section className={styles.section}>
+            <h2>Our product: CiteOnly</h2>
+            <p>
+              An AI that cannot make things up. It answers questions from your own documents,
+              word for word, with the source beside every part.{' '}
+              <a href="https://citeonly.com/" rel="noopener">citeonly.com</a> ·{' '}
+              <Link href="/citeonly/">About CiteOnly</Link>
+            </p>
+          </section>
 
           <section className={styles.section}>
             <h2>Why:</h2>
@@ -73,7 +99,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <p>&copy; 2024 Biclay Labs. All rights reserved.</p>
+        <p>&copy; 2026 Biclay Labs. All rights reserved.</p>
       </footer>
     </>
   );
