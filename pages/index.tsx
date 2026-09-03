@@ -57,25 +57,19 @@ export default function Home() {
         </section>
 
         <section className="tight">
-          <div className="row">
+          <div className="row wide">
             <div className="main prose">
               <h2>How it started</h2>
-              <p>Biclay Labs started as an applied machine learning consultancy, and this site first
-              went up in September 2024 to say so: getting language-model products into production,
-              cutting the cost and latency of systems already running, standing up self-hosted
-              models where data could not leave the building.</p>
+              <p>Biclay Labs started as an applied machine learning consultancy: getting
+              language-model products into production, cutting the cost and latency of systems
+              already running, standing up self-hosted models where data could not leave the
+              building.</p>
               <p>In that work one question kept coming back, from the people whose names went on the
               output: where did this sentence come from? A checker or a citation matcher added on
               top made the system more complicated without making the answer any more defensible.</p>
-              <p>CiteOnly is built for that question, and its site went live on 2 September 2026.
-              Consulting is no longer offered. The company builds one product.</p>
+              <p>CiteOnly is built for that question. Consulting is no longer offered. The company
+              builds one product.</p>
             </div>
-            <aside className="margin">
-              <div className="note">
-                <b>Two dates</b>
-                September 2024, the consulting site. 2 September 2026, citeonly.com.
-              </div>
-            </aside>
           </div>
         </section>
 
